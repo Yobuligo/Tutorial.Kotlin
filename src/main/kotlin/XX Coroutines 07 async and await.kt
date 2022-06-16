@@ -1,10 +1,12 @@
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.job
 import kotlinx.coroutines.runBlocking
 
 /**
  * With function async Coroutines can be created that returns a specific result. Async returns an object which provides access to the result.
  * With function await it is possible to retrieve the result of async as soon it is returned
+ * Async is similar to launch. The difference is that launch returns a job object and async returns a deferred object to get the value.
  */
 
 fun main() {
