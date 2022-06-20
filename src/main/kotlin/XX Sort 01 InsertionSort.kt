@@ -58,11 +58,27 @@ fun sort(list: List<Int>): List<Int> {
     return sortedList
 }
 
+fun insertionSortWikipedia(list: MutableList<Int>): List<Int> {
+    val sortedList = list.toMutableList()
+    for (i in 1 until sortedList.size) {
+        val value = sortedList[i]
+        var j = i
+        while (j > 0 && sortedList[j - 1] > value) {
+            sortedList[j] = sortedList[j - 1]
+            j -= 1
+        }
+        sortedList[j] = value
+    }
+    return sortedList
+}
+
 fun main() {
-    val number = 150000
+    val number = 50000
     val list = mutableListOf<Int>()
     repeat(number) {
         list.add(Random.nextInt(0, number))
     }
+
     println(measureTimeMillis { sort(list) })
+    println(measureTimeMillis { insertionSortWikipedia(list) })
 }
