@@ -5,6 +5,9 @@ import kotlinx.coroutines.runBlocking
 /**
  * As RunBlocking starts a Coroutine it is possible to execute functions in parallel.
  * With "launch" a new Coroutine can be created which is executed without blocking the thread in which it is executed
+ *
+ * Outside of the delay function it is usual that everything is executed on the main thread.
+ * This means it is not executed in parallel. To execute it concurrent launch needs Dispatcher.Default has parameter.
  */
 
 fun main() {
